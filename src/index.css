@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-body bg-bg-light text-text-dark antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-bg-dark;
+  }
+  
+  /* Keyframe animations as requested */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 15px rgba(232, 37, 26, 0.4); }
+    50% { box-shadow: 0 0 30px rgba(232, 37, 26, 0.8); }
+  }
+  
+  @keyframes ctaPulse {
+    0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
+    70% { box-shadow: 0 0 0 16px rgba(255,255,255,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+  }
+  
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulseGlow 2s infinite;
+  }
+  
+  .animate-ctaPulse {
+    animation: ctaPulse 2s infinite;
+  }
+}
